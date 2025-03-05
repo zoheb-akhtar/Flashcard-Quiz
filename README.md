@@ -1,3 +1,5 @@
+https://flashcard-quiz-zoheb-akhtars-projects.vercel.app/
+
 ## Flashcard Quiz App
 A simple flashcard quiz app built with React, designed to fetch trivia questions from an external API and display them based on user-selected categories and number of questions. This app uses debounce to optimize API calls and ensures smooth user experience.
 
@@ -12,3 +14,4 @@ Flashcards Display: Shows trivia questions with answers after the data is fetche
 React: JavaScript library for building user interfaces.
 Lodash: Utility library for the debounce function.
 HTML/CSS: For structuring and styling the app.
+Vercel: Hosting
