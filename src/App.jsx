@@ -6,6 +6,7 @@ import "./index.css"
 export default function App() {
   const [flashcards, setFlashcards] = useState([])
   const [categories, setCategories] = useState([])
+  const [loading, setLoading] = useState(false)
   const categoryEl = useRef()
   const amountEl = useRef()
 
@@ -15,23 +16,22 @@ export default function App() {
     .then(data => setCategories(data.trivia_categories))
   }, [])
 
-  useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10")
-    .then(res => res.json())
-    .then(data => setFlashcards(data.results))
-  }, [])
 
  const fetchFlashcards = useCallback(
   debounce(() => {
     fetch(`https://opentdb.com/api.php?amount=${amountEl.current.value}&category=${categoryEl.current.value}`)
     .then(res => res.json())
-    .then(data => setFlashcards(data.results))
+    .then(data => {
+      setFlashcards(data.results)
+      setLoading(false)
+    })
   }, 4500),
   []
  )
 
   function handleSubmit(event) {
     event.preventDefault()
+    setLoading(true)
     fetchFlashcards()
   }
 
@@ -48,11 +48,7 @@ export default function App() {
           </select>
           <label htmlFor="amount">Amount</label>
             <input ref={amountEl} type="number" id="amount" min="1" step="1" defaultValue={10} />
-            <div className="button-container">
-              <button className="generate-button">Generate</button>
-              <p className="note">Note: Loading takes up to 10 seconds...</p>
-            </div>
-          
+              <button className="generate-button">{loading ? "Loading..." : "Generate"}</button>
       </div>
     </form>
       <FlashcardList flashcards={flashcards} />

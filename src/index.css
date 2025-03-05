@@ -85,16 +85,6 @@ input {
     font-family: 'Times New Roman', Times, serif
 }
 
-.button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.note {
-    font-size: 12px;
-    margin-left: 10px;
-}
 
 
 

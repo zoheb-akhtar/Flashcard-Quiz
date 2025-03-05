@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export default function Flashcard(props) {
   const [flip, setFlip] = useState(false)
+  const [options, setOptions] = useState([])
 
-  const answer = props.flashcard.correct_answer
-  const options = [...props.flashcard.incorrect_answers, answer]
-  const randomOptionsArray = options.sort(() => Math.random() - 0.5)
+  useEffect(() => {
+    const options = [...props.flashcard.incorrect_answers, props.flashcard.correct_answer]
+    const shuffledOptions = options.sort(() => Math.random() - 0.5)
+    setOptions(shuffledOptions)
+  }, [props.flashcard])
 
   function flipCard() {
     setFlip(prevFlip => !prevFlip)
@@ -26,7 +29,7 @@ export default function Flashcard(props) {
         <div className="inner-flashcard-container">
           <p className="flashcard-question">{decodeStr(props.flashcard.question)}</p>
           <div className="flashcard-options">
-            {randomOptionsArray.map((randomOption) => {
+            {options.map((randomOption) => {
               return <p>{decodeStr(randomOption)}</p>
             })}
            
