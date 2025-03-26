@@ -5,15 +5,15 @@ A simple flashcard quiz app built with React, designed to fetch trivia questions
 Check out The Flashcard Quiz App [here!](https://flashcard-quiz-zoheb-akhtars-projects.vercel.app/)
 
 ## Features
-Category Selection: Choose from a list of trivia categories. <br/>
-Number of Questions: Specify the number of questions to retrieve.  <br/>
-Debounced API Calls: Fetch data with a delay to avoid excessive API requests.  <br/>
-Loading State: Displays a loading message while the data is being fetched.  <br/>
-Flashcards Display: Shows trivia questions with answers after the data is fetched.  <br/>
+- **Category Selection:** Choose from a list of trivia categories. <br/>
+- **Number of Questions:** Specify the number of questions to retrieve.  <br/>
+- **Debounced API Calls:** Fetch data with a delay to avoid excessive API requests.  <br/>
+- **Loading State:** Displays a loading message while the data is being fetched.  <br/>
+- **Flashcards Display:** Shows trivia questions with answers after the data is fetched.  <br/>
 
 ## Technologies Used
-Frontend: React.js, HTML, CSS <br />
-Backend: Open Trivia API
-Development Tools: Git, GitHub <br />
-Deployment: Vercel
+- **Frontend:** React.js, HTML, CSS <br />
+- **Backend:** Open Trivia API
+- **Development Tools:** Git, GitHub <br />
+- **Deployment:** Vercel
 
