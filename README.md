@@ -1,7 +1,7 @@
 
 
 # Flashcard Quiz App
-A simple flashcard quiz app built with React, designed to fetch trivia questions from an external API and display them based on user-selected categories and number of questions. This app uses debounce to optimize API calls and ensures smooth user experience. <br />
+A simple flashcard quiz app built with React, designed to fetch trivia questions from an external API and display them based on user-selected categories and number of questions. This app uses debounce to optimize API calls and ensures smooth user experience. <br /> <br />
 Check out The Flashcard Quiz App [here!](https://flashcard-quiz-zoheb-akhtars-projects.vercel.app/)
 
 ## Features
